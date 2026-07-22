@@ -1,0 +1,294 @@
+1. Student Grade Calculator
+Python
+marks = []
+for i in range(1, 6):
+mark = float(input(f"Enter marks for Subject {i}: "))
+marks.append(mark)
+total = sum(marks)
+average = total / 5
+if average >= 90:
+grade = 'A'
+elif average >= 80:
+grade = 'B'
+elif average >= 70:
+grade = 'C'
+elif average >= 60:
+grade = 'D'
+else:
+grade = 'F'
+print(f"\nTotal Marks: {total}")
+print(f"Average Marks: {average:.2f}")
+print(f"Assigned Grade: {grade}")
+
+2. Employee Salary Calculator
+Python
+basic_salary = float(input("Enter basic salary: "))
+# Allowances
+hra = 0.20 * basic_salary # House Rent Allowance (20%)
+da = 0.10 * basic_salary # Dearness Allowance (10%)
+gross_salary = basic_salary + hra + da
+# Deductions
+pf = 0.12 * basic_salary # Provident Fund (12%)
+tax = 0.05 * gross_salary # Income Tax (5%)
+total_deductions = pf + tax
+net_salary = gross_salary - total_deductions
+print(f"\nGross Salary: ${gross_salary:.2f}")
+print(f"Total Deductions: ${total_deductions:.2f}")
+print(f"Net Salary (Take-home): ${net_salary:.2f}")
+
+3. Electricity Bill Generator
+Python
+# 3. Electricity Bill Generator
+units = float(input("Enter total electricity units consumed: "))
+bill = 0
+if units <= 100:
+bill = units * 3.50
+elif units <= 300:
+bill = (100 * 3.50) + ((units - 100) * 5.00)
+else:
+bill = (100 * 3.50) + (200 * 5.00) + ((units - 300) * 7.50)
+print(f"Total Electricity Bill: ${bill:.2f}")
+
+4. ATM Cash Withdrawal System
+Python
+saved_pin = "1234"
+balance = 5000.0
+entered_pin = input("Enter your 4-digit PIN: ")
+if entered_pin == saved_pin:
+withdrawal_amount = float(input("Enter amount to withdraw: "))
+if withdrawal_amount <= balance:
+balance -= withdrawal_amount
+print(f"Withdrawal successful! Please collect your cash.")
+print(f"Remaining Balance: ${balance:.2f}")
+else:
+print("Error: Insufficient funds in your account.")
+else:
+print("Error: Incorrect PIN access denied.")
+
+5. Online Shopping Bill
+Python
+amount = float(input("Enter initial purchase amount: "))
+# Apply slab discount
+if amount > 2000:
+discount = amount * 0.15 # 15% discount
+elif amount > 1000:
+discount = amount * 0.10 # 10% discount
+else:
+discount = 0
+discounted_amount = amount - discount
+gst = discounted_amount * 0.18 # 18% standard GST
+final_bill = discounted_amount + gst
+print(f"\nDiscount Applied: ${discount:.2f}")
+print(f"GST Amount (18%): ${gst:.2f}")
+print(f"Final Total Payable Amount: ${final_bill:.2f}")
+
+6. Restaurant Billing System
+Python
+food_total = float(input("Enter subtotal of ordered food items: "))
+gst = food_total * 0.05 # 5% Restaurant GST
+service_charge = food_total * 0.10 # 10% Optional Service Charge
+grand_total = food_total + gst + service_charge
+print(f"\nFood Subtotal: ${food_total:.2f}")
+print(f"GST (5%): ${gst:.2f}")
+print(f"Service Charge (10%): ${service_charge:.2f}")
+print(f"Grand Total Bill: ${grand_total:.2f}")
+
+7. Bank Interest Calculator
+Python
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter annual interest rate (in %): "))
+time = float(input("Enter time period (in years): "))
+# Simple Interest
+si = (principal * rate * time) / 100
+# Compound Interest (compounded annually)
+ci_total_amount = principal * ((1 + (rate / 100)) ** time)
+ci = ci_total_amount - principal
+print(f"\nSimple Interest accrued: ${si:.2f}")
+print(f"Compound Interest accrued: ${ci:.2f}")
+
+8. Hospital BMI Calculator
+Python
+weight = float(input("Enter patient weight (in kg): "))
+height = float(input("Enter patient height (in meters): "))
+bmi = weight / (height ** 2)
+if bmi < 18.5:
+status = "Underweight"
+elif bmi < 24.9:
+status = "Normal weight"
+elif bmi < 29.9:
+status = "Overweight"
+else:
+status = "Obese"
+print(f"\nCalculated BMI: {bmi:.1f}")
+print(f"Health Status Classification: {status}")
+
+9. Library Fine Calculator
+Python
+days_overdue = int(input("Enter the number of days the book is overdue: "))
+fine = 0
+if days_overdue <= 0:
+fine = 0
+elif days_overdue <= 7:
+fine = days_overdue * 1.00 # $1 per day for week 1
+elif days_overdue <= 14:
+fine = (7 * 1.00) + ((days_overdue - 7) * 2.00) # $2 per day for week
+2
+else:
+fine = (7 * 1.00) + (7 * 2.00) + ((days_overdue - 14) * 5.00) # $5 per
+day after
+print(f"Total Outstanding Library Fine: ${fine:.2f}")
+
+10. Railway Ticket Fare Calculator
+Python
+base_fare = 500.0
+age = int(input("Enter passenger age: "))
+travel_class = input("Enter travel class (Sleeper / AC): ").strip().lower()
+# Determine class multiplier
+if travel_class == "ac":
+fare = base_fare * 2.5
+else:
+fare = base_fare
+# Apply age concessions
+if age <= 5:
+fare = 0 # Free for infants
+print("Concession applied: Infant Free Ticket")
+elif age >= 60:
+fare = fare * 0.50 # 50% discount for Senior Citizens
+print("Concession applied: 50% Senior Citizen Discount")
+print(f"Final Calculated Ticket Fare: ${fare:.2f}")
+
+11. Vehicle Fuel Cost Estimator
+Python
+distance = float(input("Enter planned trip distance (in miles/km): "))
+mileage = float(input("Enter vehicle fuel economy/mileage (distance per
+unit fuel): "))
+fuel_price = float(input("Enter fuel price per unit: "))
+fuel_needed = distance / mileage
+total_expense = fuel_needed * fuel_price
+print(f"\nTotal Fuel Needed: {fuel_needed:.2f} units")
+print(f"Estimated Travel Fuel Expense: ${total_expense:.2f}")
+
+12. Mobile Recharge Billing
+Python
+plan_amount = float(input("Enter mobile plan price: "))
+promo_code = input("Enter promotional promo code (if any):
+").strip().upper()
+discount = 0
+if promo_code == "SAVE10":
+discount = plan_amount * 0.10
+elif promo_code == "CASHBACK20":
+discount = 20.00
+# Prevent negative balance calculations
+final_amount = max(0.0, plan_amount - discount)
+print(f"\nOriginal Price: ${plan_amount:.2f}")
+print(f"Discount/Cashback Applied: ${discount:.2f}")
+print(f"Final Balance Payable: ${final_amount:.2f}")
+
+13. Parking Fee Calculator
+Python
+vehicle_type = input("Enter vehicle type (Car / Bike): ").strip().lower()
+hours = int(input("Enter parking duration (in whole hours): "))
+if vehicle_type == "bike":
+rate = 10
+else:
+rate = 20 # Standard rate for cars and other vehicles
+total_fee = rate * hours
+print(f"Total Parking Charges: ${total_fee}")
+
+14. Attendance Percentage Calculator
+Python
+total_classes = int(input("Enter total number of classes held: "))
+attended_classes = int(input("Enter number of classes attended: "))
+attendance_percentage = (attended_classes / total_classes) * 100
+print(f"\nYour Attendance Record: {attendance_percentage:.2f}%")
+if attendance_percentage >= 75.0:
+print("Status: Eligible to sit for examinations.")
+else:
+print("Status: Denied. Attendance falls below the required 75%
+threshold.")
+
+15. Weather Data Analyzer
+Python
+temperatures = []
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+"Sunday"]
+for day in days:
+temp = float(input(f"Enter temperature for {day}: "))
+temperatures.append(temp)
+max_temp = max(temperatures)
+min_temp = min(temperatures)
+avg_temp = sum(temperatures) / len(temperatures)
+print(f"\nWeekly Analysis Report:")
+print(f"Maximum Temperature Recorded: {max_temp}°")
+print(f"Minimum Temperature Recorded: {min_temp}°")
+print(f"Average Weekly Temperature: {avg_temp:.2f}°")
+
+16. Online Voting Eligibility Checker
+Python
+age = int(input("Enter your age: "))
+nationality = input("Enter your nationality: ").strip().lower()
+if age >= 18 and (nationality == "american" or nationality == "domestic"):
+print("Verification Successful: You are fully eligible to vote.")
+else:
+print("Verification Failed: Ineligible to vote due to age or residency
+constraints.")
+
+17. Password Strength Checker
+Python
+password = input("Enter a password to evaluate: ")
+has_upper = any(c.isupper() for c in password)
+has_lower = any(c.islower() for c in password)
+has_digit = any(c.isdigit() for c in password)
+has_special = any(not c.isalnum() for c in password)
+valid_length = len(password) >= 8
+if has_upper and has_lower and has_digit and has_special and valid_length:
+print("Password Evaluation Result: Strong Password")
+else:
+print("Password Evaluation Result: Weak Password (Must contain at least
+8 characters, upper/lowercase metrics, numbers, and special symbols)")
+
+18. Blood Donation Eligibility Checker
+Python
+age = int(input("Enter donor's age: "))
+weight = float(input("Enter donor's weight (in kg): "))
+hemoglobin = float(input("Enter donor's hemoglobin count (in g/dL): "))
+if 18 <= age <= 65 and weight >= 50 and hemoglobin >= 12.5:
+print("Medical Clearance: You meet all requirements and are eligible to
+donate blood.")
+else:
+print("Medical Clearance: Ineligible to donate blood based on core
+structural screening metrics.")
+
+19. Inventory Stock Management
+Python
+inventory = {
+"Apples": 50,
+"Bananas": 8,
+"Oranges": 15
+}
+MINIMUM_THRESHOLD = 10
+print("--- Current Stock Audit ---")
+for item, count in inventory.items():
+print(f"Product: {item} | Stock: {count}")
+if count < MINIMUM_THRESHOLD:
+print(f"⚠️ WARNING: '{item}' stock levels are low! Please restock
+immediately.")
+
+20. Movie Ticket Booking System
+Python
+seats = int(input("Enter number of seats to reserve: "))
+category = input("Enter seating category (Standard / Premium):
+").strip().lower()
+if category == "premium":
+cost_per_seat = 250.0
+else:
+cost_per_seat = 150.0
+subtotal = seats * cost_per_seat
+# Bulk discount if purchasing more than 4 seats
+if seats > 4:
+discount = subtotal * 0.10
+print("Promotion applied: 10% Group Reservation Discount")
+else:
+discount = 0
+final_price = subtotal - discount
+print(f"Final Calculated Transaction Fee: ${final_price:.2f}")
